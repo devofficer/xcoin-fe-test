@@ -1,9 +1,12 @@
+// importing modules
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
+
+// importing components
+import Landing from './Landing';
 
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  render(<Landing />);
+  const linkElement = screen.getByText(/Tip Top Trading/i);
   expect(linkElement).toBeInTheDocument();
 });

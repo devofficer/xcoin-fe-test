@@ -1,12 +1,31 @@
+// importing modules
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { ThemeProvider, createTheme } from "@material-ui/core/styles";
+
+import './styles/index.css';
+import Landing from './pages/landing/Landing';
+
 import reportWebVitals from './reportWebVitals';
+
+const themeDark = createTheme({
+  palette: {
+    background: {
+      default: "#222222"
+    },
+    text: {
+      primary: "#ffffff"
+    }
+  }
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={themeDark}>
+      <CssBaseline/>
+      <Landing />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
