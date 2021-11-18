@@ -3,10 +3,10 @@ import {useState, useEffect} from 'react';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import Stack from '@mui/material/Stack';
-import IconButton from '@mui/material/IconButton';
+// import IconButton from '@mui/material/IconButton';
 import CircularProgress from '@mui/material/CircularProgress';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
-import SettingsIcon from '@mui/icons-material/Settings';
+// import SettingsIcon from '@mui/icons-material/Settings';
 import CurrencyCard from './components/CurrencyCard';
 import CurrencyIcon from './components/CurrencyIcon';
 import CurrencyTypography from './components/CurrencyTypography';
@@ -87,6 +87,10 @@ const Landing = () => {
     if(fromBalance < minus_amount)
       return;
 
+    // if amount is smaller than 0
+    if(minus_amount < 0 || plus_amount < 0)
+      return;
+
     storage.control(fromCurrency, false, minus_amount);
     storage.control(toCurrency, true, plus_amount);
     storage.save();
@@ -103,11 +107,11 @@ const Landing = () => {
   return (
     <CurrencyCard>
       <CardHeader
-        action={
-          <IconButton aria-label="settings">
-            <SettingsIcon sx={style.white}/>
-          </IconButton>
-        }
+        // action={
+        //   <IconButton aria-label="settings">
+        //     <SettingsIcon sx={style.white}/>
+        //   </IconButton>
+        // }
         title="Currency Swap"
         sx={style.white}
       />

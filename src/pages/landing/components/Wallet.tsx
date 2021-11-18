@@ -69,10 +69,11 @@ const Wallet = (props: WalletProps) => {
 			<Stack spacing={2} direction="row" justifyContent="space-between" alignItems="center" mt={1}>
 				<CurrencyTypography variant="body2">Balance: {balance} {currency}</CurrencyTypography>
 				{balance < amount && type === 'From' ? <ErrorTypography variant="body2">Balance is not enough</ErrorTypography>:''}
+				{amount < 0 && (<ErrorTypography variant="body2">Amount can not smaller than 0</ErrorTypography>)}
 			</Stack>
 			<CurrencyDialog open={open} onClose={handleClose} selectedValue={currency} currencies={currencies}/>
 		</CurrencyBox>
     );
 }
 
-export default Wallet;
+export default memo(Wallet);
