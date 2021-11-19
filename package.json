@@ -1,7 +1,6 @@
 {
   "name": "xcoin-fe-test",
   "apiKey": "55cbec5e91-7269a8d86d-r2py8r",
-  "proxy": "https://api.fastforex.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -95,7 +95,7 @@ class Storage {
 	 * 
  	**/
 	reloadRateInfo(fromCurrency:string, toCurrency:string, callback:(rate:number) => void) {
-		axios.get<ServerData>('/fetch-one', {
+		axios.get<ServerData>('https://api.fastforex.io/fetch-one', {
 			params: { 
 				api_key: pkg.apiKey,
 				from: fromCurrency,
